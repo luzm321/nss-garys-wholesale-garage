@@ -1,14 +1,20 @@
+using System;
+
 namespace GarysWholeSaleGarage
 {
-    public class Cessna  // Propellor light aircraft
+    // Propellor light aircraft
+    public class Cessna : Vehicle 
     {
         public double FuelCapacity { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
 
         public void RefuelTank()
         {
-            // method definition omitted
+            Console.WriteLine($"Your have refueled your car with {FuelCapacity} gallons!");
+        }
+
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Cessna with {MaximumOccupancy} passengers flashes by you like a hurricane. Zoooooom!");
         }
     }
 }

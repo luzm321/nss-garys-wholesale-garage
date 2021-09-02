@@ -1,14 +1,20 @@
+using System;
+
 namespace GarysWholeSaleGarage
 {
-    public class Ram  // Gas powered truck
+    // Gas powered truck
+    public class Ram : Vehicle
     {
         public double FuelCapacity { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
 
         public void RefuelTank()
         {
-            // method definition omitted
+              Console.WriteLine($"Your have refueled your car with {FuelCapacity} gallons!");
+        }
+
+         public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Ram with {MaximumOccupancy} passengers growls by you. Rrrruuummmble!");
         }
     }
 }
