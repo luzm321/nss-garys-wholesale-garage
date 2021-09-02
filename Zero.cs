@@ -1,14 +1,20 @@
+using System;
+
 namespace GarysWholeSaleGarage
 {
-    public class Zero  // Electric motorcycle
+    // Electric motorcycle
+    public class Zero : Vehicle
     {
         public double BatteryKWh { get; set; }
-        public string MainColor { get; set; }
-        public int MaximumOccupancy { get; set; }
 
         public void ChargeBattery()
         {
-            // method definition omitted
+            Console.WriteLine($"Your car is now charged to {BatteryKWh} KWh!");
+        }
+
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Zero with {MaximumOccupancy} passengers zips by you. Yeeeooowww!");
         }
     }
 }
