@@ -11,11 +11,22 @@ namespace GarysWholeSaleGarage
         public void ChargeBattery()
         {
             Console.WriteLine($"Your car is now charged to {BatteryKWh} KWh!");
+            Console.WriteLine();
         }
 
         public override void Drive()
         {
             Console.WriteLine($"The {MainColor} Tesla with {MaximumOccupancy} passengers blazes by you. MMMmmmmmm!");
+        }
+
+        public override void Turn(string direction)
+        {
+            Console.WriteLine($"The {MainColor} Tesla squeals around a {direction} turn.");
+        }
+
+        public override void Stop()
+        {
+            Console.WriteLine($"The {MainColor} Tesla silently stops as if it never moved.");
         }
     }
 }
