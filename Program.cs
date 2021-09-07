@@ -42,29 +42,36 @@ namespace GarysWholeSaleGarage
 
             /***********************************************/
 
-            // Ram ram = new Ram ();
-            // Cessna cessna150 = new Cessna ();
+            Ram ram = new Ram () { VehicleName = "ram", CurrentTankPercentage = 21};
+            Cessna cessna150 = new Cessna () { VehicleName = "cessna150", CurrentTankPercentage = 40};
 
-            // List<???> gasVehicles = new List<???>() {
-            //     ram, cessna150
-            // };
+            List<IGasVehicle> gasVehicles = new List<IGasVehicle>() {
+                ram, cessna150
+            };
 
-            // Console.WriteLine("Gas Vehicles");
-            // foreach(??? gv in gasVehicles)
-            // {
-            //     Console.WriteLine($"{gv.CurrentTankPercentage}");
-            // }
+            Console.WriteLine("Gas Vehicles: ");
+            Console.WriteLine();
+            foreach(IGasVehicle gv in gasVehicles)
+            {
+                // Console.WriteLine($"{gv.CurrentTankPercentage}");
+                Console.Write($"Vehicle {gv.VehicleName} Current Fuel Percentage: "); gv.ShowCurrentTankPercentage();
+            }
 
-            // foreach(??? gv in gasVehicles)
-            // {
-            //     // This should completely refuel the gas tank
-            //     gv.RefuelTank();
-            // }
+            Console.WriteLine("-------------------------------------------");
 
-            // foreach(??? gv in gasVehicles)
-            // {
-            //     Console.WriteLine($"{gv.CurrentTankPercentage}");
-            // }
+            foreach(IGasVehicle gv in gasVehicles)
+            {
+                // This should completely refuel the gas tank
+                gv.RefuelTank();
+            }
+
+            Console.WriteLine("-------------------------------------------");
+
+            foreach(IGasVehicle gv in gasVehicles)
+            {
+                // Console.WriteLine($"{gv.CurrentTankPercentage}");
+                Console.Write($"Vehicle {gv.VehicleName} Current Fuel Percentage: "); gv.ShowCurrentTankPercentage();
+            }
 
 
 

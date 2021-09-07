@@ -3,14 +3,23 @@ using System;
 namespace GarysWholeSaleGarage
 {
     // Gas powered truck
-    public class Ram : Vehicle
+    public class Ram : Vehicle, IGasVehicle
     {
-        public double FuelCapacity { get; set; }
+        public double FuelCapacity { get; set; } = 100.00;
+        public double CurrentTankPercentage { get; set; }
 
         public void RefuelTank()
         {
-              Console.WriteLine($"Your have refueled your car with {FuelCapacity} gallons!");
-              Console.WriteLine();
+            // Console.WriteLine($"Your have refueled your car with {FuelCapacity} gallons!");
+            Console.WriteLine($"Your {VehicleName} is now refueled from {CurrentTankPercentage}% to {FuelCapacity}%!");
+            CurrentTankPercentage = FuelCapacity;
+            Console.WriteLine();
+        }
+
+        public void ShowCurrentTankPercentage()
+        {
+            Console.WriteLine(CurrentTankPercentage.ToString());
+            Console.WriteLine();
         }
 
          public override void Drive()
