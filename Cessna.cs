@@ -3,13 +3,22 @@ using System;
 namespace GarysWholeSaleGarage
 {
     // Propellor light aircraft
-    public class Cessna : Vehicle 
+    public class Cessna : Vehicle, IGasVehicle 
     {
-        public double FuelCapacity { get; set; }
+        public double FuelCapacity { get; set; } = 100.00;
+        public double CurrentTankPercentage { get; set; }
 
         public void RefuelTank()
         {
-            Console.WriteLine($"Your have refueled your car with {FuelCapacity} gallons!");
+            // Console.WriteLine($"Your have refueled your car with {FuelCapacity} gallons!");
+            Console.WriteLine($"Your {VehicleName} is now refueled from {CurrentTankPercentage}% to {FuelCapacity}%!");
+            CurrentTankPercentage = FuelCapacity;
+            Console.WriteLine();
+        }
+
+        public void ShowCurrentTankPercentage()
+        {
+            Console.WriteLine(CurrentTankPercentage.ToString());
             Console.WriteLine();
         }
 
