@@ -6,6 +6,7 @@ namespace GarysWholeSaleGarage
     {
         public string MainColor { get; set; }
         public int MaximumOccupancy { get; set; }
+        public string VehicleName { get; set; }
 
         // need to define method as virtual to be able to override the default logic/behavior of method when inherited by the subclasses:
         public virtual void Drive()
